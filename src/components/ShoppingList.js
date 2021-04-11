@@ -2,11 +2,13 @@ import { plantList } from '../data/plantList'
 import '../styles/ShoppingList.css'
 
 function ShoppingList() {
-	const categories = plantList.reduce( //on peut le faire avec forEach également comment ?
-		(acc, plant) =>
-			acc.includes(plant.category) ? acc : acc.concat(plant.category), //je ne comprends pas la fonction Reduce et les méthodes includes et concat
-		[]
-	)
+	const categories = plantList.map(function(element){
+		return element.category
+	}
+		)
+		
+	
+		
     return (
 		<div>
 			<ul>
