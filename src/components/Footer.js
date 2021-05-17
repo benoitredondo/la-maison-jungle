@@ -1,11 +1,12 @@
 
 import '../styles/Footer.css'
+import { useState } from 'react'
 
 function Footer(){
+const [inputValue, setInputValue]=useState ('')
 
-function doThis (e){
-    e.preventDefault()
-    alert(e.target['my_email'].value)
+function handleInput(e){
+    setInputValue(e.target.value)
 }
 
 	return (
@@ -15,10 +16,16 @@ function doThis (e){
 			</div>
 			<div className='lmj-footer-elem'>Laissez-nous votre mail :</div>
 
-        <form onSubmit={doThis}>
-            <input typ='text' name='my_email' defaultValue='Tapez votre adresse email'/>
-            <button type='submit'>Envoyer</button>
+        <form>
+            <input 
+                placeholder='Entrez votre mail'
+				onChange={handleInput}
+				value={inputValue} />
+            <button
+                onClick={()=>alert(inputValue)}
+            >Envoyer</button>
             </form>
+
 		</footer>
 	)
 }
