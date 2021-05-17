@@ -6,8 +6,8 @@ export const plantList = [
 		category: 'classique',
 		id: '1ed',
 		isBestSale: true,
-		light: 2,
-		water: 3,
+		light: '2',
+		water: '3',
 		cover: monstera
 	},
 	{
